@@ -1,76 +1,55 @@
 # CIFRANDO
 
 
-### 1. Preguntamos qué desea hacer el usuario entre dos opciones.
+### I. Preguntamos qué desea hacer el usuario entre dos opciones.
 
 + Si la respuesta no corresponde a estas opciones, seguirá preguntando
 + Si la respuesta corresponde a una de las opciones:
 	- Si es 1, cifrará
 	- Si es 2, descifrará
 
-###	2. Verificamos la frase ingresada.
+###	II. Verificamos la frase ingresada.
 + Solicitamos una frase al usuario.
 	- Si esta contiene números, o está vacía, seguirá preguntando que ingrese una frase válida.
 	- Si la frase ingresada cumple con los requisitos, será modificada según la opción indicada.
 
-### 3. Cifrado
-+ 
+### III. Cifrado
++ Declaramos una variable que contendrá nuestra frase cifrada.
+	1. Iteramos en la frase ingresada para ir modificando cada elemento, y lo guardamos en una nueva variable (char).
+	2. Por medio de una expresión regular, verificamos que sea una letra, y la guardamos en una nueva variable (code).
+	3. Ya que las letras minúsculas y mayúsculas en ASCII se encuentran en rangos no continuos, realizamos un if para cada rango.
+		1. Letras mayúsculas: mayor o igual a 65 y menor o igual a 90. 
+
+			```((code - 65 + 33) % 26) + 65```
+
+		2. Letras minúsculas: mayor o igual a 97 y menor o igual a 122.
+		
+			```((code - 97 + 33) % 26) + 97```
+	4. Actualizamos el valor de la variable char.
+	5. A nuestra variable output le concatenamos la variable actualizada.
+	6. Entrega la frase cifrada.
+
+### IV. Descifrado
++ Declaramos una variable que contendrá nuestra frase cifrada.
+	1. Iteramos en la frase ingresada para ir modificando cada elemento, y lo guardamos en una nueva variable (```char```).
+	2. Por medio de una expresión regular, verificamos que sea una letra, y la guardamos en una nueva variable (```code```).
+	3. Ya que las letras minúsculas y mayúsculas en ASCII se encuentran en rangos no continuos, realizamos un if para cada rango.
+		1. Letras mayúsculas: mayor o igual a 65 y menor o igual a 90. En este caso, queremos revertir el desplazamiento, por lo que restamos 33. Además, sumamos 26 en el interior de la fórmula,
+		para evitar valores negativos. 
+
+			```((code - 65 - 33 +26) % 26) + 65```
+
+		2. Letras minúsculas: mayor o igual a 97 y menor o igual a 122. En este caso, queremos revertir el desplazamiento, por lo que restamos 33. También sumamos 26 en el interior de la fórmula.
+		
+			```((code - 97 - 33 +26) % 26) + 97```
+
+	4. Actualizamos el valor de la variable char.
+	5. A nuestra variable output le concatenamos la variable actualizada.
+	6. Entrega la frase descifrada.
 
 
+### V. Diagrama de flujo
 
 
-
-function cipher(str) {
-	var output = '';	// Declaramos una variable de salida en blanco.
-	for (var i = 0; i < str.length; i ++) {// Iteramos dentro del string para ir modificando cada elemento.
-		var char = str[i];	// Guardamos el caracter en una variable
-
-	
-		if (char.match(/[a-z]/i)) {// Verificamos si es una letra ¿?
-
-
-			var code = str.charCodeAt(i);// Obtenemos el codigo en ASCII
-			
-			if ((code >= 65) && (code <= 90))// Rango de código letras mayúsculas
-				char = String.fromCharCode(((code - 65 + 33) % 26) + 65); 	//Aplicamos la fórmula, y le agregamos
-																			//el parámetro de desplazamiento
-			
-			else if ((code >= 97) && (code <= 122))// Rango de código de letras minúsculas
-				char = String.fromCharCode(((code - 97 + 33) % 26) + 97);	//Aplicamos la fórmula, y le agregamos
-																			//el parámetro de desplazamiento
-
-		}
-		output += char;	// A nuestra variable de salida le concatenamos el caracter transformado.
-	}
-	return output;// Retornamos el string.
-}
-
-
-function decipher(str){
-var output = '';	// Creamos una variable de salida en blanco.
-	for (var i = 0; i < str.length; i ++) {// Iteramos dentro del string para ir modificándolo
-		var char = str[i];	// Guardamos el caracter en una variable
-
-	
-		if (char.match(/[a-z]/i)) {// Verificamos si es una letra ¿?
-
-
-			var code = str.charCodeAt(i);// Obtenemos el código en ASCII
-			
-			if ((code >= 65) && (code <= 90))// Rango de código letras mayúsculas
-				char = String.fromCharCode(((code - 65 - 33 +26) % 26) + 65); 	//Aplicamos la fórmula, y le agregamos 
-																				//el parámetro de desplazamiento. Le sumamos 26 
-																				//para evitar valores negativos.
-			
-			else if ((code >= 97) && (code <= 122))// Rango de código de letras minúsculas
-				char = String.fromCharCode(((code - 97 - 33 +26) % 26) + 97);	//Aplicamos la fórmula, y le agregamos
-																				//el parámetro de desplazamiento. Le sumamos 26
-																				//para evitar valores negativos.
-
-		}
-		output += char;	// A nuestra variable de salida le concatenamos el caracter transformado.
-	}
-	return output;// Retornamos el string.
-}
-
-whatToDo()
+![](/images/logo.png)
+![Alt Text](https://orig00.deviantart.net/036e/f/2017/277/a/6/a6c434fc09221cfe43b35d05dc7b9bb6-dbpjbcv.jpg)

@@ -1,6 +1,3 @@
-
-
-
 function whatToDo(option){   //Primero preguntamos qué se quiere hacer
 	do{
 		var answer = prompt("Indique lo que desea realizar: \n\1)Cifrar \n\ 2)Descifrar");
@@ -57,12 +54,12 @@ function cipher(str) {
 			var code = str.charCodeAt(i);// Obtenemos el codigo en ASCII
 			
 			if ((code >= 65) && (code <= 90))// Rango de código letras mayúsculas
-				char = String.fromCharCode(((code - 65 + 33) % 26) + 65); 	//Aplicamos la fórmula, y le agregamos
-																			//el parámetro de desplazamiento
+				char = String.fromCharCode(((code - 65 + 33) % 26) + 65); 	//Aplicamos la fórmula, con el parámetro
+																			//de desplazamiento indicado (+33)
 			
 			else if ((code >= 97) && (code <= 122))// Rango de código de letras minúsculas
-				char = String.fromCharCode(((code - 97 + 33) % 26) + 97);	//Aplicamos la fórmula, y le agregamos
-																			//el parámetro de desplazamiento
+				char = String.fromCharCode(((code - 97 + 33) % 26) + 97);	//Aplicamos la fórmula, con el parámetro 
+																			//de desplazamiento indicado (+33)
 
 		}
 		output += char;	// A nuestra variable de salida le concatenamos el caracter transformado.
@@ -83,12 +80,12 @@ var output = '';	// Creamos una variable de salida en blanco.
 			var code = str.charCodeAt(i);// Obtenemos el código en ASCII
 			
 			if ((code >= 65) && (code <= 90))// Rango de código letras mayúsculas
-				char = String.fromCharCode(((code - 65 - 33 +26) % 26) + 65); 	//Aplicamos la fórmula, y le agregamos 
+				char = String.fromCharCode(((code - 65 - 33 + 26) % 26) + 65); 	//Aplicamos la fórmula, y le agregamos 
 																				//el parámetro de desplazamiento. Le sumamos 26 
 																				//para evitar valores negativos.
 			
 			else if ((code >= 97) && (code <= 122))// Rango de código de letras minúsculas
-				char = String.fromCharCode(((code - 97 - 33 +26) % 26) + 97);	//Aplicamos la fórmula, y le agregamos
+				char = String.fromCharCode(((code - 97 - 33 + 26) % 26) + 97);	//Aplicamos la fórmula, y le agregamos
 																				//el parámetro de desplazamiento. Le sumamos 26
 																				//para evitar valores negativos.
 
