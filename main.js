@@ -1,6 +1,6 @@
 function whatToDo(option){   //Primero preguntamos qué se quiere hacer
 	do{
-		var answer = prompt("Indique lo que desea realizar: \n\1)Cifrar \n\ 2)Descifrar");
+		var answer = prompt("Indique lo que desea realizar: \n\ 1)Cifrar \n\ 2)Descifrar");
 
 
 		if(answer != ""){
