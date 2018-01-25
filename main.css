@@ -1,0 +1,48 @@
+body{
+  background-image: url(img/cipher.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  text-align: center;
+}
+
+textarea{
+  width: 72vh;
+  height: 10vh;
+  border-radius: 1vh;  
+  resize: none;
+  display: block;
+  margin: 0 auto 1vh;
+}
+
+button, select{
+  width: 20vh;
+  height: 5vh;
+  border-radius: 1vh;
+}
+
+button{
+  background-color: #e9c80d;
+  border: 0.1vh solid black;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+}
+
+select{
+  background-color: white;
+}
+
+#ciphered{
+  width: 72vh;
+  height: 10vh;
+  background-color: white;
+  border: 0.1vh solid gray;  
+  border-radius: 1vh;  
+  resize: none;
+  display: block;
+  margin: 1vh auto;
+  overflow-wrap: break-word;
+  text-align: justify;
+}

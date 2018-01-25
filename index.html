@@ -2,13 +2,24 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="main.css">
 	<title>Cifrado Cesar</title>
 </head>
-<body background="https://hdwallpapersbuzz.com/wp-content/uploads/2017/03/bill-cipher-wallpaper-images-3-1.jpg">
-	<h1>CIFRANDO  
-	<p> Y DESCIFRANDO </p>
-	</h1>
-	<script src="main.js"></script>
+<body>
+	<h1>CIFRANDO Y DESCIFRANDO</h1>
+	<h4>Escriba lo que desee cifrar o descifrar, e indique lo que desee realizar.</h4>
+	<textarea type="text" id="textToChange"></textarea>
+	<select name="" id="optSelected">
+		<option value="1" id="optOne">Cifrar</option>
+		<option value="2" id="optTwo">Descifrar</option>
+	</select>
+	<button id="send">Enviar</button>
+	<div id="ciphered"></div>	
 
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script src="app.js"></script>
 </body>
 </html>
